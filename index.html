@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denis Ngunjiri - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5fffa;
+            color: #f5fffa;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #45a049;
+        }
+        .container {
+            display: flex;
+            flex-direction: row; /* Align items in a row */
+            align-items: flex-start; /* Align items at the start */
+            padding: 20px;
+            max-width: 1200px; /* Limit max width */
+            margin: auto; /* Center the container */
+        }
+        .photo {
+            margin-right: 20px; /* Space between image and side message */
+        }
+        .photo img {
+            border-radius: 20%;
+            width: 250px; /* Increased width for the image */
+            height: auto;/* Maintain aspect ratio */
+            background-color: white;
+            box-shadow: 0 2px 10px grey;
+        }
+        /* Side Message Styles */
+        .side-message {
+            position: relative; /* Keep relative positioning */
+            margin-top: 20px; /* Space below the header */
+            margin-left: 60px; /* Move message box to the right */
+            background: yellowgreen;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 8px;
+            width: 300px; /* Keep the width */
+            height: auto; /* Set height to auto */
+            max-height: 400px; /* Increased maximum height */
+            overflow-y: auto; /* Allow scrolling if content is too long */
+        }
+        span{
+            color: #ccff00; /* green-yellow */
+            font-size: 2em;
+            text-shadow: 
+              0 0 5px #ccff00,
+              0 0 10px #ccff00,
+              0 0 20px #ccff00,
+              0 0 40px #bfff00,
+              0 0 80px #99ff00;
+            text-transform: capitalize;
+        }
+    </style>
+    <script>
+        function showMessage(title, content, color) {
+            const message = document.querySelector('.side-message');
+            message.style.backgroundColor = color;
+            message.querySelector('h2').innerText = title;
+            message.querySelector('p').innerText = content;
+            message.classList.add('active');
+        }
+
+        function closeMessage() {
+            const message = document.querySelector('.side-message');
+            message.classList.remove('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1><span>DENIS</span> Ngunjiri</h1>
+        <nav>
+            <a href="#" onclick="showMessage('About Me', 'Hello, My name is Denis, a Computer Science Student at Turkana University college. I am a programmer and an enterprenuer. I sell perfumes and offer their refilling services.', 'grey')">About</a>
+            <a href="#" onclick="showMessage('Skills', 'Web-development: HTML, CSS, JavaScript, Programming: Java, C, and C++, Database systems: MySQL working with XAMPP, Ability to understand and work with pseudo code, image manipulation and styling in webpages, adaptability in learning new things, enterprenuership: perfume business', 'brown')">Skills</a>
+            <a href="#" onclick="showMessage('Education', 'I started my Education in the year 2008, did my KCPE in 2018 that is after finishing class 8, then I did my KCSE in 2022 after finishing form four and currently I am university Student aiming to graduate in 2027.', '#8A2BE2')">Education</a>
+            <a href="#" onclick="showMessage('Contact', 'Phone:+254715291248   email: denisngunjiri73@gmail.com', '#4b0082')">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="photo">
+            <img src="https://assets.onecompiler.app/43h4qwgrq/43h4v7vmp/IMG-20250303-WA0010.jpg" alt="Your Photo">
+        </div>
+        <div class="side-message">
+            <h2>Hello Welcome to my portfolio</h2>
+            <p></p>
+        </div>
+    </div>
+</body>
+</html>
